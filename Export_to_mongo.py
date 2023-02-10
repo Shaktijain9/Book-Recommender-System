@@ -9,9 +9,9 @@ DATABASE_NAME = "book-recommendation"
 COLLECTION_NAME_BOOKS = "books"
 COLLECTION_NAME_USER = "users"
 COLLECTION_NAME_RATING = "ratings"
-BOOK_FILE_NAME = "Books.csv"
-RATINGS_FILE_NAME = "Ratings.csv"
-USERS_FILE_NAME = "Users.csv"
+BOOK_FILE_NAME = "books_data_processed.csv"
+RATINGS_FILE_NAME = "ratings_data_processed.csv"
+USERS_FILE_NAME = "users_data_processed.csv"
 
 
 book_df = pd.read_csv(BOOK_FILE_NAME)
