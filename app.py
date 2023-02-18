@@ -2,7 +2,6 @@ from flask import Flask
 from flask import render_template, request
 import pickle
 import numpy as np
-from time import time
 
 popular_df = pickle.load(open('model/top_50.pkl', 'rb'))
 pt = pickle.load(open("model/pt.pkl", 'rb'))
