@@ -4,10 +4,10 @@ import pickle
 import numpy as np
 from time import time
 
-popular_df = pickle.load(open('top_50.pkl', 'rb'))
-pt = pickle.load(open("pt.pkl", 'rb'))
-similarity_score = pickle.load(open("similarity_score.pkl", 'rb'))
-books_df = pickle.load(open("books_df.pkl", 'rb'))
+popular_df = pickle.load(open('model/top_50.pkl', 'rb'))
+pt = pickle.load(open("model/pt.pkl", 'rb'))
+similarity_score = pickle.load(open("model/similarity_score.pkl", 'rb'))
+books_df = pickle.load(open("model/books_df.pkl", 'rb'))
 
 app = Flask(__name__)
 
