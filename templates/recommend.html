@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -45,24 +45,30 @@
 
 
 
-    <div class="header">
-        <div class="header-1">
 
-                <form action="/recommend_books" method="post"  class="search-form">
-                    <input name="user_input" type="text" placeholder="enter book here..." id="search-box" >
-                    <label for="search-box" class="fas fa-search"></label>
+        <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <form action="/recommend_books" method="post" class="search-form">
+                    <input name="user_input" type="text" placeholder="search here..."id="search-box"/></br>
+                    <input type="submit" class="fas fa-search">
                 </form>
+            </div>
 
             {% if data %}
 
              {% for i in data %}
+                <div class="col-md-3" style="margin-top:50px">
                     <div class="card">
                         <div class="card-body">
                             <img class="card-img-top" src="{{i[2]}}">
                             <p class="text-white">{{i[0]}}</p>
                             <h4 class="text-white">{{i[1]}}</h4>
                         </div>
+                    </div>
+                </div>
              {% endfor %}
+
             {% endif %}
 
 
@@ -70,5 +76,6 @@
 
         </div>
     </div>
+
 
 </html>
