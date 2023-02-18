@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Recommendation System</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+<header class="header">
+
+    <div class="header-1">
+        <a href="#" class="logo"> <i class="fas fa-book"></i> Book-Flix </a>
+        <div class="icons">
+            <div id="search-btn" class="fas fa-search"></div>
+            <a href="#" class="fas fa-heart"></a>
+            <a href="#" class="fas fa-shopping-cart"></a>
+            <div id="login-btn" class="fas fa-user"></div>
+        </div>
+    </div>
+
+    <div class="header-2">
+        <nav class="navbar">
+            <a href="/">home</a>
+            <a href="/recommend">recommend</a>
+        </nav>
+    </div>
+
+</header>
+
+<!--<style>-->
+<!--    .text-white{-->
+<!--        color:white-->
+<!--    }-->
+<!--</style>-->
+
+
+
+
+    <div class="header">
+        <div class="header-1">
+
+                <form action="/recommend_books" method="post"  class="search-form">
+                    <input name="user_input" type="text" placeholder="enter book here..." id="search-box" >
+                    <label for="search-box" class="fas fa-search"></label>
+                </form>
+
+            {% if data %}
+
+             {% for i in data %}
+                    <div class="card">
+                        <div class="card-body">
+                            <img class="card-img-top" src="{{i[2]}}">
+                            <p class="text-white">{{i[0]}}</p>
+                            <h4 class="text-white">{{i[1]}}</h4>
+                        </div>
+             {% endfor %}
+            {% endif %}
+
+
+
+
+        </div>
+    </div>
+
+</html>
